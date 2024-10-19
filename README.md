@@ -1,30 +1,41 @@
 # Music Recommendation System
 
-This repository contains a recommendation system developed to suggest the top 10 songs tailored to user preferences, improving engagement on streaming platforms.
+This repository contains a **recommendation system project** based on a partially completed `.ipynb` template provided by **MIT/Great Learning**. The project leverages **song metadata and user behavior** to suggest songs tailored to user preferences. Systems like these can **boost engagement** by helping users navigate vast content libraries more effectively.
 
-## Project Overview
+## Technologies Used  
+- **Python** (scikit-learn, Pandas, NumPy)  
+- **Jupyter Notebooks**  
 
-With vast catalogs and diverse user tastes, delivering accurate song recommendations is essential for engagement and user satisfaction. This project explores multiple recommendation algorithms using **The Echo Nest's Million Song Dataset** and evaluates them based on predictive accuracy and personalization.
+## Data Summary  
+The dataset consists of:  
+- **Song Data:** Titles, release years, and artist information.  
+- **User Data:** User IDs, song IDs, and play counts.  
 
-### Key Questions Addressed
-1. What songs are users likely to enjoy?
-2. Which features contribute to a song's popularity?
-3. How can recommendation algorithms improve user engagement?
+After **data cleaning and preparation**, the working dataset includes:  
+- 400,730 entries  
+- 3,156 unique users  
+- 9,998 unique songs  
+- 3,374 unique artists  
 
-## Data Summary
+## Features  
+- **Collaborative Filtering:** Predict user preferences based on similar users, achieving an optimized RMSE of **1.0529**.  
+- **Matrix Factorization Models:** Improve accuracy by decomposing the user-item interaction matrix, optimized RMSE of **1.019**.  
+- **Hyperparameter Tuning:** Use **GridSearchCV** from scikit-learn to optimize model performance.
 
-The dataset consists of:
-- **Song Data**: Titles, release years, and artist information.
-- **User Data**: User IDs, song IDs, and play counts.
+## Known Issues / Maintenance  
+- **User-Item Collaborative Filtering:**  
+  The current collaborative filtering model returns **unexpectedly high RMSE values (>5)**. Further investigation is needed to diagnose potential causes, such as **data sparsity, hyperparameter issues, or matrix factorization errors**.  
 
-After data cleaning and preparation, we retained 400,730 entries with 3,156 unique users, 9,998 unique songs, and 3,374 unique artists.
+- **Dataset Availability:**  
+  Initial development was conducted in **Google Colab** using **Google Drive-hosted datasets**. To improve accessibility, the plan is to integrate a **lighter-weight dataset directly into this repository** for easier use and reproducibility.
 
-## Model Comparisons
+## Next Steps / Future Development  
+- **Enhance collaborative filtering performance:** Identify and address the root cause of high RMSE values.  
+- **Incorporate content-based filtering:** Add content-based recommendations to complement collaborative filtering models.  
+- **Experiment with additional datasets:** Explore publicly available datasets to improve model robustness.  
+- **Refactor code for modularity:** Organize the codebase into reusable modules for easier maintenance.  
+- **Deploy as a Streamlit app:** Create a user-friendly interface to interact with the recommendation system.
 
-1. **Popularity-Based**: Simple, interpretable, but lacks personalization.
-2. **Collaborative Filtering (User-User & Item-Item)**: Effective for personalization; user-user performed better with an optimized RMSE of 1.0529.
-3. **Matrix Factorization**: Best performance with an optimized RMSE of 1.019, capturing latent patterns in user preferences.
-4. **Content-Based**: Recommends similar songs but lacks diversity and relies heavily on item features.
-
-### Recommended Approach
-The **Matrix Factorization model** provides the most accurate recommendations with interpretability, ideal for production deployment. Future enhancements could explore hybrid models for improved diversity.
+## Contact  
+- **GitHub:** [@kedarkurpad](https://github.com/kedarkurpad)  
+- **LinkedIn:** [Kedar Kurpad](https://linkedin.com/in/kedar-kurpad) 
